@@ -4,35 +4,27 @@ const myArr = [];
 //CHIEDO ALL'UTENTE DEI NUMERI PER RIEMPIRE L'ARRAY
 const sendNumber = document.getElementById('send');
 
+let addNumber = 0;
+
 sendNumber.addEventListener('click', 
 function() {
 
-    // let i = 0;
-    // while (i < myArr.length) {
-    //     let addNumber = 0;
-    
-    //     let myNumber = document.getElementById('number').value;
-    
-    //     myArr.push(myNumber);
-    
-    //     console.log(myArr);
 
-    //     addNumber += parseInt(myArr[i]);
+ 
+    let myNumber = document.getElementById('number').value;
 
-    //     if (addNumber > 50) {
-            
-    //     }
-    //     console.log(parseInt(addNumber));
-    // }
+    myNumber = parseInt(myNumber);
 
-    do {
+    myArr.push(myNumber);
 
-        let addNumber = 0;
-        let myNumber = document.getElementById('number').value;
-        myArr.push(myNumber);
+    addNumber +=(myNumber);
 
-        addNumber += parseInt(myNumber);
+    if (addNumber + myNumber >= 50) {
 
-    } while (addNumber < 50)
+        sendNumber.disabled = true;
+    }
+
+    console.log(myArr);
+    console.log(addNumber);
 
 });
